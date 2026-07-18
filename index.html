@@ -87,10 +87,11 @@
             let centerX = canvas.width / 2;
             let centerY = canvas.height / 2;
 
-            // แก้ไขตรงนี้: ปรับให้จุดศูนย์กลางของหัวใจกลับมาอยู่ตรงกลางหน้าจอพอดี
-            let heartCenterX = centerX; 
+            // แก้ไขตรงนี้: ปรับลบออก 25 พิกเซล เพื่อดึงให้โครงสร้างหัวใจขยับมาทางซ้ายให้อยู่ตรงกลางพอดี
+            // (ถ้าลองรันแล้วยังรู้สึกว่าเบี้ยวซ้ายหรือขวาไปนิด สามารถปรับเลข 25 เพิ่มหรือลดได้ตามใจชอบเลยครับ)
+            let heartCenterX = centerX - 25; 
 
-            // 1. วาดข้อความ "Happy Anniversary" ตรงกลางหน้าจอ (ใช้ centerX)
+            // 1. วาดข้อความ "Happy Anniversary" ตรงกลางหน้าจอเหมือนเดิม (ใช้ centerX)
             ctx.fillStyle = "#ffe5ec";
             ctx.font = "600 18px 'Prompt', sans-serif";
             ctx.textAlign = "center";
@@ -102,7 +103,7 @@
             ctx.font = "300 16px 'Prompt', sans-serif";
             ctx.fillText("～我们的一周年♡", centerX, centerY + 12);
 
-            // 2. วาดเส้นขอบหัวใจให้ตรงกลาง (ใช้ heartCenterX ที่เท่ากับ centerX แล้ว)
+            // 2. วาดเส้นขอบหัวใจที่ขยับมาทางซ้ายแล้ว (ใช้ heartCenterX)
             ctx.fillStyle = "#ff8fa3";
             ctx.font = "bold 14px 'Prompt', sans-serif";
 
